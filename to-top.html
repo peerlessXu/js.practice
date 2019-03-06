@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>回到顶部</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section">1111111</div>
+        <div class="section">2222222</div>
+        <div class="section">3333333</div>
+        <div class="section">4444444</div>
+        <div class="section">5555555</div>
+        <div class="section">6666666</div>
+        <div class="section">7777777</div>
+        <div class="section">8888888</div>
+    </div>
+    <div id="to-top">
+        回到顶部
+    </div>
+    <script>
+        ;
+        (function (global) {
+            "use strict";
+            var BackToTop = function (options) {
+
+            };
+
+            BackToTop.prototype = {
+                init: function () {
+
+                }
+            };
+
+            if (typeof module !== 'undefined' && module.exports) module.exports = BackToTop;
+            if (typeof define === 'function') define(function () {
+                return BackToTop;
+            });
+            global.BackToTop = BackToTop;
+
+        })(this);
+    </script>
+</body>
+
+</html>

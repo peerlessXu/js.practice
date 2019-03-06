@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>写插件</title>
+</head>
+
+<body>
+    <script>
+        ;
+        (function (global) {
+            "use strict";
+            var MyPlugin = function (options) {
+
+            };
+
+            MyPlugin.prototype = {
+                init: function () {
+
+                }
+            };
+
+            if (typeof module !== 'undefined' && module.exports) module.exports = MyPlugin;
+            if (typeof define === 'function') define(function () {
+                return MyPlugin;
+            });
+            global.MyPlugin = MyPlugin;
+
+        })(this);
+    </script>
+</body>
+
+</html>
