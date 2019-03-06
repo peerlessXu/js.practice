@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>节流</title>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <input id='inp' type='text' />
+    </div>
+
+    <script>
+        function throttle(fn, wait) {
+            let timer = null;
+            return function () {
+                let context = this;
+                let args = arguments;
+                if (!timer) {
+                    timer = setTimeout(function () {
+                        fn.apply(context, args);
+                        timer = null;
+                    }, wait)
+                }
+            }
+        }
+
+        function myfunc(e) {
+            console.log(e)
+        }
+        document.querySelector('#inp').addEventListener('input', throttle(myfunc, 1000))
+    </script>
+
+</body>
+
+</html>
