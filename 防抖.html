@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>防抖</title>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <input id='inp' type='text' />
+    </div>
+
+    <script>
+        function debounce(fn, wait) {
+            let timer = null;
+            return function () {
+                timer && clearTimeout(timer);
+                let context = this;
+                let args = arguments;
+                timer = setTimeout(function () {
+                    fn.apply(context, args)
+                }, wait)
+            }
+        }
+        function myfunc(e) {
+            console.log(e)
+        }
+        document.querySelector('#inp').addEventListener('input', debounce(myfunc, 1000))
+    </script>
+
+</body>
+
+</html>
